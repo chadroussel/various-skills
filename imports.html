@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imports</title>
+  </head>
+  <body>
+    <h1>Dynamic Imports</h1>
+    <ul>
+      List
+      <li>Load JS modules dynamically</li>
+      <li>lazy-loading or computed module specifier strings</li>
+    </ul>
+    <button class="button" id="myButton">Multiply</button>
+
+    <script type="module">
+      import * as math from "./imports.js";
+
+      document.getElementById("myButton").addEventListener("click", () => {
+        alert(math.multiply(10, 5));
+      });
+      //   below is dynamic import (add default to function in lev3.js)
+      //   document.getElementById("myButton").addEventListener("click", () => {
+      //     import("./imports.js").then((math) => {
+      //       console.log(math);
+      //       alert(math.default(10, 5));
+      //     });
+      //   });
+    </script>
+  </body>
+</html>
